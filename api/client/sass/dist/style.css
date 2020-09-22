@@ -1,0 +1,71 @@
+:root {
+  --primary: #222632;
+  --white: #f0f8ff;
+  --selection: #bcd4ff;
+}
+
+::selection {
+  background-color: var(--selection);
+  color: var(--white);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  appearance: none;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 50rem;
+  background-color: var(--primary);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) #333949;
+}
+
+html,
+body {
+  min-width: 260px;
+  min-height: 100vh;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#con {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+#con .box {
+  margin-bottom: 15px;
+  position: relative;
+}
+#con .box .box-name {
+  font-size: 16px;
+}
+#con .box .box-email {
+  color: #8d99ae;
+  font-size: 12px;
+}
