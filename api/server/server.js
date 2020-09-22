@@ -1,10 +1,12 @@
 const cors = require("cors");
 const express = require("express");
 const app = express();
+const data = require("./data");
+
 app.use(cors());
 
-app.get("/", function () {
-    try {
-    } catch (error) {}
+app.get("/", (req, res) => {
+    return res.json(data);
 });
-app.listen(4567);
+
+app.listen(3000);
