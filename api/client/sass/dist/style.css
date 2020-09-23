@@ -55,17 +55,36 @@ li {
 }
 
 #con {
+  padding: 0 1%;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+#con > h2 {
+  margin-left: 20px;
+  font-weight: 300;
 }
 #con .box {
+  border-radius: 8px;
+  padding: 16px 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.589);
   margin-bottom: 15px;
   position: relative;
+  font-size: 13px;
 }
-#con .box .box-name {
-  font-size: 16px;
+#con .box .bx {
+  color: #6d788b;
 }
-#con .box .box-email {
-  color: #8d99ae;
-  font-size: 12px;
+#con .box .bx span {
+  color: #3e4858;
+  margin-right: 20px;
+  font-size: 15px;
+}
+
+.block {
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
 }

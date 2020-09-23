@@ -1,23 +1,45 @@
+const con = document.getElementById("con");
 async function getApi(url) {
     try {
-        const res = await fetch(url);
-        const data = await res.json();
-        show(data);
+        const response = await fetch(url);
+        const datas = await response.json();
+        show(datas);
     } catch (error) {
         console.error(error);
     }
 }
-getApi("http://localhost:3000");
-
 function show(datas) {
-    const con = document.getElementById("con");
-    let box = "";
+    let res = "";
+
     datas.map((data) => {
-        box += `
-        <div class="box">
-            <div class="box-name"> ${data.name}</div>
-            <div class="box-email">${data.email}</div>
-        </div>`;
+        res += `<div class="box">
+                    <div class="bx">
+                        <span>ID: </span> ${data.id}
+                    </div>
+                    <div class="bx">
+                        <span>Username: </span> ${data.name + data.username}
+                    </div>
+                    <div class="bx">
+                        <span>Email: </span> ${data.email}
+                    </div>
+                    <div class="bx">
+                        <span>Street: </span> ${data.address.street}
+                    </div>
+                    <div class="bx">
+                        <span>City: </span> ${data.address.city}
+                    </div>
+                    <div class="bx">
+                        <span>Phone: </span> ${data.phone}
+                    </div>
+
+                </div>
+        `;
     });
-    con.innerHTML = box;
+    con.innerHTML = res
 }
+// function createEl(el, cl) {
+//     // select element and insert class
+//     return (document.createElement(el).className = cl);
+// }
+
+getApi("http://localhost:3000");
