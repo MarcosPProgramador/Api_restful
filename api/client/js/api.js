@@ -9,35 +9,43 @@ async function getApi(url) {
     }
 }
 function show(datas) {
-    let res = "";
-
     datas.map((data) => {
-        res += `<div class="box">
-                    <div class="bx">
-                        <span>ID: </span> ${data.id}
-                    </div>
-                    <div class="bx">
-                        <span>Username: </span> ${data.name + data.username}
-                    </div>
-                    <div class="bx">
-                        <span>Email: </span> ${data.email}
-                    </div>
-                    <div class="bx">
-                        <span>Street: </span> ${data.address.street}
-                    </div>
-                    <div class="bx">
-                        <span>City: </span> ${data.address.city}
-                    </div>
-                    <div class="bx">
-                        <span>Phone: </span> ${data.phone}
-                    </div>
-
-                </div>
-        `;
+        const arr = [
+            "ID: " + data.id,
+            "Name: " + data.name,
+            "Username: " + data.username,
+            "Email: " + data.email,
+            "Street: " + data.address.street,
+            "City: " + data.address.city,
+            "Phone: " + data.phone,
+        ];
+        for (let ct of arr) {
+            iteratorArr(ct);
+        }
     });
-    con.innerHTML = res;
+
+    function iteratorArr(ct) {
+        const newLocal = "div";
+        const newLocal_1 = "box";
+        const box = create(newLocal, newLocal_1);
+        box.textContent = ct;
+
+        //  Container
+        //          Box
+        append(con, box);
+    }
 }
-function o(el) {
-    return document.querySelector(el);
+// factory functions / desing pattern
+function create(e, c) {
+    const l = document.createElement(e);
+    l.className = c;
+    return l;
 }
+function append(c, b) {
+    return c.appendChild(b);
+}
+function o(e) {
+    return document.querySelector(e);
+}
+// api
 getApi("http://localhost:3000");

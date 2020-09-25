@@ -37,15 +37,40 @@ function getApi(url) {
 }
 
 function show(datas) {
-  var res = "";
   datas.map(function (data) {
-    res += "<div class=\"box\">\n                    <div class=\"bx\">\n                        <span>ID: </span> ".concat(data.id, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Username: </span> ").concat(data.name + data.username, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Email: </span> ").concat(data.email, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Street: </span> ").concat(data.address.street, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>City: </span> ").concat(data.address.city, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Phone: </span> ").concat(data.phone, "\n                    </div>\n\n                </div>\n        ");
+    var arr = ["ID: " + data.id, "Name: " + data.name, "Username: " + data.username, "Email: " + data.email, "Street: " + data.address.street, "City: " + data.address.city, "Phone: " + data.phone];
+
+    for (var _i = 0, _arr = arr; _i < _arr.length; _i++) {
+      var ct = _arr[_i];
+      iteratorArr(ct);
+    }
   });
-  con.innerHTML = res;
+
+  function iteratorArr(ct) {
+    var newLocal = "div";
+    var newLocal_1 = "box";
+    var box = create(newLocal, newLocal_1);
+    box.textContent = ct; //  Container
+    //          Box
+
+    append(con, box);
+  }
+} // factory functions / desing pattern
+
+
+function create(e, c) {
+  var l = document.createElement(e);
+  l.className = c;
+  return l;
 }
 
-function o(el) {
-  return document.querySelector(el);
+function append(c, b) {
+  return c.appendChild(b);
 }
+
+function o(e) {
+  return document.querySelector(e);
+} // api
+
 
 getApi("http://localhost:3000");

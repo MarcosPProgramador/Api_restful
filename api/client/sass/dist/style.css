@@ -1,12 +1,6 @@
-:root {
-  --primary: #222632;
-  --white: #f0f8ff;
-  --selection: #bcd4ff;
-}
-
 ::selection {
-  background-color: var(--selection);
-  color: var(--white);
+  background-color: #bcd4ff;
+  color: #f0f8ff;
 }
 
 * {
@@ -26,12 +20,12 @@
 
 *::-webkit-scrollbar-thumb {
   border-radius: 50rem;
-  background-color: var(--primary);
+  background-color: #222632;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--primary) #333949;
+  scrollbar-color: #222632 #333949;
 }
 
 html,
@@ -42,8 +36,8 @@ body {
 
 body {
   overflow-x: hidden;
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: #222632;
+  color: #f0f8ff;
 }
 
 a {
@@ -73,12 +67,4 @@ li {
   margin-bottom: 15px;
   position: relative;
   font-size: 13px;
-}
-#con .box .bx {
-  color: #6d788b;
-}
-#con .box .bx span {
-  color: #3e4858;
-  margin-right: 20px;
-  font-size: 15px;
 }

@@ -1,11 +1,8 @@
-:root {
-    --primary: #222632;
-    --white: #f0f8ff;
-    --selection: #bcd4ff;
-}
+@import "./variables";
+
 ::selection {
-    background-color: var(--selection);
-    color: var(--white);
+    background-color: $selection;
+    color: $white;
 }
 * {
     margin: 0;
@@ -18,15 +15,15 @@
 *::-webkit-scrollbar {
     width: 7px;
     height: 7px;
-    background-color: #fff;
+    background-color: $whitef;
 }
 *::-webkit-scrollbar-thumb {
     border-radius: 50rem;
-    background-color: var(--primary);
+    background-color: $primary;
 }
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--primary) #333949;
+    scrollbar-color: $primary $secondary;
 }
 html,
 body {
@@ -35,8 +32,8 @@ body {
 }
 body {
     overflow-x: hidden;
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: $primary;
+    color: $white;
 }
 a {
     text-decoration: none;
@@ -63,14 +60,5 @@ li {
         margin-bottom: 15px;
         position: relative;
         font-size: 13px;
-
-        .bx {
-            color: #6d788b;
-            span {
-                color: #3e4858;
-                margin-right: 20px;
-                font-size: 15px;
-            }
-        }
     }
 }

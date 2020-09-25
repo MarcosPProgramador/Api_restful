@@ -1,4 +1,3 @@
-
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -12,7 +11,7 @@ app.get("/", async (req, res) => {
             "http://jsonplaceholder.typicode.com/users"
         );
 
-        res.json(data)
+        res.json(data);
     } catch (error) {
         console.error(error);
     }
