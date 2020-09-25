@@ -1,6 +1,6 @@
 "use strict";
 
-var con = document.getElementById("con");
+var con = o("#con");
 
 function getApi(url) {
   var response, datas;
@@ -42,10 +42,10 @@ function show(datas) {
     res += "<div class=\"box\">\n                    <div class=\"bx\">\n                        <span>ID: </span> ".concat(data.id, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Username: </span> ").concat(data.name + data.username, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Email: </span> ").concat(data.email, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Street: </span> ").concat(data.address.street, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>City: </span> ").concat(data.address.city, "\n                    </div>\n                    <div class=\"bx\">\n                        <span>Phone: </span> ").concat(data.phone, "\n                    </div>\n\n                </div>\n        ");
   });
   con.innerHTML = res;
-} // function createEl(el, cl) {
-//     // select element and insert class
-//     return (document.createElement(el).className = cl);
-// }
+}
 
+function o(el) {
+  return document.querySelector(el);
+}
 
 getApi("http://localhost:3000");

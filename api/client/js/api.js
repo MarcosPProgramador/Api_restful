@@ -1,4 +1,4 @@
-const con = document.getElementById("con");
+const con = o("#con");
 async function getApi(url) {
     try {
         const response = await fetch(url);
@@ -35,11 +35,9 @@ function show(datas) {
                 </div>
         `;
     });
-    con.innerHTML = res
+    con.innerHTML = res;
 }
-// function createEl(el, cl) {
-//     // select element and insert class
-//     return (document.createElement(el).className = cl);
-// }
-
+function o(el) {
+    return document.querySelector(el);
+}
 getApi("http://localhost:3000");
